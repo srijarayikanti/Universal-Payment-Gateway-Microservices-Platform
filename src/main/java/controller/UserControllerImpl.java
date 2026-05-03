@@ -24,4 +24,15 @@ public class UserControllerImpl implements UserController {
             throw new RuntimeException(e);
         }
     }
+    @Override
+    public ResponseEntity<?> fetchUserDetailsByEmailId(String email) {
+        try {
+            // Implement the logic to fetch user details by email ID
+            // For example, you can call a service method to handle the business logic
+            // return userService.fetchUserDetailsByEmailId(email);
+            return userService.fetchUserDetailsByEmailId(email);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
