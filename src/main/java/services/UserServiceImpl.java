@@ -25,4 +25,15 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
         return ResponseEntity.ok("User details saved successfully");
     }
+
+    @Override
+    public ResponseEntity<?> fetchUserDetailsByEmailId(String email) {
+        // Implement the logic to fetch user details by email ID
+        User user = userRepository.findByEmail(email);
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }
